@@ -8,23 +8,18 @@ namespace Inventario.BL
 {
     public class ProductosBL
     {
-         public List<Producto>  ObtenerProductos()
+        Contexto _contexto;
+        public List<Producto> ListadeProductos { get; set; }
+        public ProductosBL()
         {
-            var producto1 = new Producto();  
-            producto1.Id = 1;
-            producto1.Descripcion = "Laptop";
-            producto1.Precio = 200;  
+            _contexto = new Contexto();
+            ListadeProductos = new List<Producto>();
+        }
 
-            var producto2 = new Producto();
-            producto2.Id = 2;
-            producto2.Descripcion = "Mouse";
-            producto2.Precio = 150; 
-
-            var listadeProductos = new List<Producto>();
-            listadeProductos.Add(producto1);
-            listadeProductos.Add(producto2);
-
-            return listadeProductos;     
+        public List<Producto>  ObtenerProductos()
+        {
+            ListadeProductos = _contexto.Productos.ToList();
+            return ListadeProductos;
         }
     }
 }
