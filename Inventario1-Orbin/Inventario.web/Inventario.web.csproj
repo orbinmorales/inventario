@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{AFC30D40-A39D-4901-A797-C3D41EF54DCB}</ProjectGuid>
+    <ProjectGuid>{4B5053C3-F319-42E4-9960-457F603BD316}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Inventario.WebAdmin</RootNamespace>
-    <AssemblyName>Inventario.WebAdmin</AssemblyName>
+    <RootNamespace>Inventario.web</RootNamespace>
+    <AssemblyName>Inventario.web</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -137,17 +137,11 @@
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
-    <None Include="scripts\jquery.validate-vsdoc.js" />
-    <Content Include="scripts\jquery.validate.js" />
-    <Content Include="scripts\jquery.validate.min.js" />
-    <Content Include="scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CategoriasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -163,21 +157,12 @@
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Productos\Index.cshtml" />
-    <Content Include="Views\Productos\Crear.cshtml" />
-    <Content Include="Views\Productos\Editar.cshtml" />
-    <Content Include="Views\Productos\Detalle.cshtml" />
-    <Content Include="Views\Productos\Eliminar.cshtml" />
-    <Content Include="Views\Categorias\Index.cshtml" />
-    <Content Include="Views\Categorias\Crear.cshtml" />
-    <Content Include="Views\Categorias\Editar.cshtml" />
-    <Content Include="Views\Categorias\Detalle.cshtml" />
-    <Content Include="Views\Categorias\Eliminar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -208,9 +193,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>62869</DevelopmentServerPort>
+          <DevelopmentServerPort>49568</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:62869/</IISUrl>
+          <IISUrl>http://localhost:49568/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
