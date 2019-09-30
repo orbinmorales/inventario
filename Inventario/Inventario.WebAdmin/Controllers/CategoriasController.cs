@@ -10,32 +10,44 @@ namespace Inventario.WebAdmin.Controllers
     public class CategoriasController : Controller
     {
         CategoriasBL _categoriasBL;
-
         public CategoriasController()
         {
             _categoriasBL = new CategoriasBL();
-        }
 
+        }
         // GET: Categorias
         public ActionResult Index()
         {
-            var ListadeCategorias = _categoriasBL.ObtenerCategorias();
+            var listadeCategorias = _categoriasBL.ObtenerCategorias();
 
-            return View(ListadeCategorias);
+            return View(listadeCategorias);
         }
 
 
         public ActionResult Crear()
         {
             var nuevaCategoria = new Categoria();
+
+
             return View(nuevaCategoria);
         }
 
         [HttpPost]
-        public ActionResult Crear(Categoria producto)
+        public ActionResult Crear(Categoria categoria)
         {
-            _categoriasBL.GuardarCategoria(producto);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                if (categoria.Descripcion != categoria.Descripcion.Trim())
+                {
+                    ModelState.AddModelError("Descripcion", "La descripcion no debe contener espacios al inicio o al final");
+                    return View(categoria);
+                }
+                _categoriasBL.GuardarCategoria(categoria);
+                return RedirectToAction("Index");
+
+            }
+
+            return View(categoria);
         }
 
         public ActionResult Editar(int id)
@@ -45,32 +57,43 @@ namespace Inventario.WebAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(Categoria producto)
+        public ActionResult Editar(Categoria categoria)
         {
-            _categoriasBL.GuardarCategoria(producto);
+            if (ModelState.IsValid)
+            {
+                if (categoria.Descripcion != categoria.Descripcion.Trim())
+                {
+                    ModelState.AddModelError("Descripcion", "La descripcion no debe contener espacios al inicio o al final");
+                    return View(categoria);
+                }
+                _categoriasBL.GuardarCategoria(categoria);
+                return RedirectToAction("Index");
 
-            return RedirectToAction("Index");
+            }
+
+            return View(categoria);
         }
 
         public ActionResult Detalle(int id)
         {
             var producto = _categoriasBL.ObtenerCategoria(id);
-
             return View(producto);
         }
 
         public ActionResult Eliminar(int id)
         {
             var producto = _categoriasBL.ObtenerCategoria(id);
-
             return View(producto);
+
         }
 
         [HttpPost]
+
         public ActionResult Eliminar(Categoria producto)
         {
             _categoriasBL.EliminarCategoria(producto.Id);
             return RedirectToAction("Index");
         }
+
     }
 }

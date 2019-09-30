@@ -10,6 +10,7 @@ namespace Inventario.BL
     {
         Contexto _contexto;
         public List<Categoria> ListadeCategorias { get; set; }
+
         public CategoriasBL()
         {
             _contexto = new Contexto();
@@ -18,11 +19,13 @@ namespace Inventario.BL
 
         public List<Categoria> ObtenerCategorias()
         {
+
             ListadeCategorias = _contexto.Categorias.ToList();
             return ListadeCategorias;
         }
 
         public void GuardarCategoria(Categoria categoria)
+
         {
             if (categoria.Id == 0)
             {
@@ -34,8 +37,9 @@ namespace Inventario.BL
                 categoriaExistente.Descripcion = categoria.Descripcion;
 
             }
-
             _contexto.SaveChanges();
+
+
         }
 
         public Categoria ObtenerCategoria(int id)
@@ -43,12 +47,13 @@ namespace Inventario.BL
             var categoria = _contexto.Categorias.Find(id);
             return categoria;
         }
-
         public void EliminarCategoria(int id)
         {
             var categoria = _contexto.Categorias.Find(id);
             _contexto.Categorias.Remove(categoria);
             _contexto.SaveChanges();
         }
+
+
     }
 }

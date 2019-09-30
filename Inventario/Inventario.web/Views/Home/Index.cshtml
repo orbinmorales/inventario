@@ -1,7 +1,128 @@
-﻿
+﻿@model List<Inventario.BL.Producto>
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inicio";
 }
 
-<h2>Bienvenidos a Inventario</h2>
+
+<section class="story-area left-text center-sm-text">
+    <div class="container">
+        <div class="heading"><h3>Nuestro inventario OBECA <br /> Juguetes</h3> 
+    
+        </div>
+        <div class="row">
+            @foreach (var producto in Model
+                .Where(r=> r.Categoria.Descripcion == "juguetes")
+                .Take(4)
+                .OrderBy(r => Guid.NewGuid())
+                )
+            {
+
+            
+                <div class="col-lg-3 col-md-4  col-sm-6 ">
+                    <div class="center-text mb-30">
+                        <div class="ïmg-200x mlr-auto pos-relative">
+                            <h6 class="ribbon-cont color-white"><div class="ribbon primary"></div><b>DISPONIBLES</b></h6>
+                            <img src="@(ViewBag.adminWebsiteUrl+ producto.UrlImagen)" alt="JUGUETES">
+                        </div>
+                        <h5 class="mt-20">@producto.Descripcion</h5>
+                        <h4 class="mt-5 color-primary"><b>L @producto.Precio</b></h4>
+                    </div><!--text-center-->
+                </div><!-- col-md-3 -->
+            }
+        </div><!-- row-->
+    </div><!-- container -->
+    
+</section> <h3 align="center">Nuestros Articulos </h3>
+<section class="bg-lite-blue"> 
+    <div class="container">  
+        <div class="row">
+        
+        @foreach (var producto in Model)
+        {
+
+        
+            <div class="col-md-6">
+                <div class="sided-90x mb-30 ">
+                    <div class="s-left"><img class="br-3" src="@(ViewBag.adminWebsiteUrl+ producto.UrlImagen)" alt="Productos"></div><!--s-left-->
+                    <div class="s-right">
+                        <h5 class="mb-10"><b>@producto.Descripcion</b><b class="color-primary float-right">L @producto.Precio</b></h5>
+                        <p class="pr-70"> </p>
+                    </div><!--s-right-->
+                </div><!-- sided-90x -->
+            </div><!-- food-menu -->
+  
+
+        }
+ 
+        </div><!-- row -->
+    </div><!-- container -->
+</section>
+
+<section class="story-area bg-seller color-white pos-relative">
+    <div class="pos-bottom triangle-up"></div>
+    <div class="pos-top triangle-bottom"></div>
+    <div class="container">
+        <h4 class="font-30 font-sm-20  center-text mb-25">Guarda tu inventario con nosotros <br /> <b>#1</b> en todo Centroamerica</h4>
+    </div><!-- container -->
+</section>
+
+<section>
+    <div class="container">
+        <div class="heading mb-sm-10"><h3>Productos para el hogar</h3></div>
+        <div class="row">
+
+                @foreach (var producto in Model
+                            .Where(r => r.Categoria.Descripcion == "hogar")
+                            .Take(2)
+                            .OrderBy(r => Guid.NewGuid())
+                            )
+        {
+
+
+
+            <div class="col-md-12 col-lg-6">
+                <div class="sided-220x responsive mb-30 left-text center-sm-text">
+                    <div class="s-left mlr-sm-auto"><img src="@(ViewBag.adminWebsiteUrl+ producto.UrlImagen)" alt="Menu hogar"></div>
+                    <div class="s-right">
+                        <h5>@producto.Descripcion</h5>
+                        <h4 class="mtb-10"><b class="color-primary">L @producto.Precio</b></h4>
+                        <p> </p>
+                    </div><!--s-right-->
+                </div><!-- sided-90x -->
+            </div><!-- col-md-6 -->
+                }
+
+        </div><!-- row-->
+
+  
+
+
+       
+    
+
+        <h3 align="center"> Lo ultimo en tecnologia </h3>
+        <div class="brder-t-light mt-sm-10 mb-60 mb-sm-40"></div>
+        <div class="row">
+            @foreach (var producto in Model
+                .Where(r => r.Categoria.Descripcion == "tecnologia")
+                .Take(4)
+                .OrderBy(r => Guid.NewGuid())
+                )
+            {
+
+
+                <div class="col-md-6">
+                    <div class="sided-90x mb-30">
+                        <div class="s-left"><img class="br-3" src="@(ViewBag.adminWebsiteUrl+ producto.UrlImagen)" alt="Tecnologia"></div><!--s-left-->
+                        <div class="s-right">
+                            <h5 class="mb-10"><b>@producto.Descripcion</b><b class="color-primary float-right">L @producto.Precio</b></h5>
+                            <p class="pr-70"> </p>
+                        </div><!--s-right-->
+                    </div><!-- sided-90x -->
+                </div><!-- food-menu -->
+            }
+        </div><!-- row-->
+    </div><!-- container -->
+</section>
 
