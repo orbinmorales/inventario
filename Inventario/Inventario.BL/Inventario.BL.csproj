@@ -52,6 +52,7 @@
     <Compile Include="Categoria.cs" />
     <Compile Include="CategoriasBL.cs" />
     <Compile Include="Contexto.cs" />
+    <Compile Include="DatosdeInicio.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="PedidosBL.cs" />
     <Compile Include="Producto.cs" />
@@ -61,6 +62,8 @@
     <Compile Include="ProveedoresBL.cs" />
     <Compile Include="ReporteVentasPorProducto.cs" />
     <Compile Include="ReporteVentasPorProductoBL.cs" />
+    <Compile Include="SeguridadBL.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

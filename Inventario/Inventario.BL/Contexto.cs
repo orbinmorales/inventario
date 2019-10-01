@@ -21,6 +21,7 @@ namespace Inventario.BL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            Database.SetInitializer(new DatosdeInicio()); //Agregar datos de inicio al momento de crear la BD 
         }
 
         public DbSet<Producto> Productos { get; set; }
@@ -29,6 +30,8 @@ namespace Inventario.BL
 
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<PedidoDetalle> PedidoDetalle { get; set; }
+        public DbSet<Usuario> Usuarios{ get; set; }
+
 
     }
 }

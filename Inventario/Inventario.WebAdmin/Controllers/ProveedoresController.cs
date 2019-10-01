@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Inventario.WebAdmin.Controllers
 {
+    [Authorize]
     public class ProveedoresController : Controller
     {
         ProveedoresBL _proveedoresBL;
