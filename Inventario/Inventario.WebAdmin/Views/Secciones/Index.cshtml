@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Inventario.BL.Seccion>
+
+@{
+    ViewBag.Title = "Secciones";
+}
+
+<h2>Secciones</h2>
+
+<p>
+    @Html.ActionLink("Nueva Seccion", "Crear")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pasillo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pasillo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.ID }) |
+            @Html.ActionLink("Detalle", "Detalle", new { id=item.ID }) |
+            @Html.ActionLink("Eliminar", "Eliminar", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

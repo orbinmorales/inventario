@@ -23,7 +23,7 @@ namespace Inventario.BL
         public string Descripcion { get; set; }
 
         [Required(ErrorMessage = "Ingrese el precio")]
-        [Range(0, 1000, ErrorMessage = "Ingrese un precio valido ")]
+        [Range(0, 100000, ErrorMessage = "Ingrese un precio valido menor a 100,000 ")]
         public double Precio { get; set; }
         public int CategoriaId { get; set; }
         public Categoria Categoria { get; set; }
@@ -32,6 +32,8 @@ namespace Inventario.BL
         public string UrlImagen { get; set; }
 
         public bool Activo { get; set; }
+
+        public double Codigo { get; set; }
 
     }
 }

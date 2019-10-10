@@ -26,6 +26,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Activo)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
         <th></th>
     </tr>
 
@@ -48,6 +51,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Activo)
             </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Codigo)
+            </td>
+
             <td>
                 @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
                 @Html.ActionLink("Detalle", "Detalle", new { id = item.Id }) |

@@ -62,6 +62,7 @@ namespace Inventario.BL
                 var pedidoExistente = _contexto.Pedidos.Find(pedido.Id);
                 pedidoExistente.ProveedorId = pedido.ProveedorId;
                 pedidoExistente.Activo = pedido.Activo;
+                pedidoExistente.Codigo = pedido.Codigo;
             }
 
             _contexto.SaveChanges();

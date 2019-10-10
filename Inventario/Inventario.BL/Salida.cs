@@ -6,32 +6,31 @@ using System.Threading.Tasks;
 
 namespace Inventario.BL
 {
-    public class Pedido
+    public class Salida
     {
-        public int Id { get; set; }
-        public int ProveedorId { get; set; }
-        public Proveedor Proveedor { get; set; }
+        public int ID { get; set; }
+        public int SeccionID { get; set; }
+        public Seccion Seccion { get; set; }
         public DateTime Fecha { get; set; }
         public double Total { get; set; }
         public bool Activo { get; set; }
 
-        public List<PedidoDetalle> ListadePedidoDetalle { get; set; }
-        public object Codigo { get; internal set; }
+        public List<SalidaDetalle> ListadeSalidaDetalle { get; set; }
 
-        public Pedido()
+        public Salida()
         {
             Activo = true;
             Fecha = DateTime.Now;
 
-            ListadePedidoDetalle = new List<PedidoDetalle>();
+            ListadeSalidaDetalle = new List<SalidaDetalle>();
         }
     }
 
-    public class PedidoDetalle
+    public class SalidaDetalle
     {
         public int Id { get; set; }
-        public int PedidoId { get; set; }
-        public Pedido Pedido { get; set; }
+        public int SalidaID { get; set; }
+        public Salida Salida { get; set; }
 
         public int ProductoId { get; set; }
         public Producto Producto { get; set; }

@@ -39,7 +39,9 @@ h1, h2, h3, h4, h5, h6, p, a, ul, span, li, img, inpot, button { margin: 0; padd
 
 h1, h2, h3, h4, h5, h6 { line-height: 1.5; font-weight: inherit; }
 
-h1, h2, h3, .font-beyond { font-family: 'beyond_the_mountainsregular', sans-serif; }
+/*h1, h2, h3, .font-beyond { font-family: 'beyond_the_mountainsregular', sans-serif; }*/
+h1, h2, h3, .font-beyond { font-family: 'Open Sans', sans-serif; }
+
 
 p { line-height: 1.7; font-size: 1.05em; font-weight: 400; color: #555; }
 
@@ -734,7 +736,7 @@ section {
 }
 
 .color-ash {
-        color: #aaa;
+        color: #fff;
 }
 
 .color-ccc {
@@ -767,7 +769,7 @@ section {
 
 /* BACKGROUND COLOR*/
 
-.bg-seller{ background: url(../images/inventario7.png)  no-repeat; background-size: cover; position: relative; z-index: 1; }
+.bg-seller{ background: url(../images/inventario7.jpg)  no-repeat; background-size: cover; position: relative; z-index: 1; }
 
 .bg-seller:after{ content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -1; background: rgba(148, 61, 61, 0.85); }
 

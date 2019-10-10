@@ -62,6 +62,10 @@
     <Compile Include="ProveedoresBL.cs" />
     <Compile Include="ReporteVentasPorProducto.cs" />
     <Compile Include="ReporteVentasPorProductoBL.cs" />
+    <Compile Include="Salida.cs" />
+    <Compile Include="SalidasBL.cs" />
+    <Compile Include="Seccion.cs" />
+    <Compile Include="SeccionesBL.cs" />
     <Compile Include="SeguridadBL.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
